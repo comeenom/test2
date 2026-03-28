@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://comeenom.github.io/cm_pjt1/sitemap.xml
