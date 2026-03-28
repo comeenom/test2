@@ -1,14 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>제휴 문의</title>
+  <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">PARTNERSHIP</p>
+      <h1>간단하게 제휴 문의를 남겨주세요.</h1>
+      <p class="intro">
+        브랜드 협업, 공동 프로모션, 콘텐츠 제휴, 광고 제안까지 한 번에 접수합니다.
+        아래 폼으로 보내주시면 확인 후 회신드리겠습니다.
+      </p>
+      <ul class="highlights">
+        <li>빠르게 핵심 정보만 입력</li>
+        <li>브랜드명과 연락처만 있어도 접수 가능</li>
+        <li>Formspree로 바로 전달</li>
+      </ul>
+    </section>
+
+    <section class="form-card">
+      <form id="partnership-form" action="https://formspree.io/f/mykbkogp" method="POST">
+        <div class="field-grid">
+          <label>
+            <span>담당자 이름</span>
+            <input type="text" name="name" placeholder="홍길동" required>
+          </label>
+
+          <label>
+            <span>이메일</span>
+            <input type="email" name="email" placeholder="name@company.com" required>
+          </label>
+
+          <label>
+            <span>회사명</span>
+            <input type="text" name="company" placeholder="회사 또는 브랜드명" required>
+          </label>
+
+          <label>
+            <span>연락처</span>
+            <input type="tel" name="phone" placeholder="010-1234-5678">
+          </label>
+        </div>
+
+        <label>
+          <span>제휴 유형</span>
+          <select name="partnership_type" required>
+            <option value="" selected disabled>선택해주세요</option>
+            <option value="brand-collab">브랜드 협업</option>
+            <option value="content">콘텐츠 제휴</option>
+            <option value="promotion">공동 프로모션</option>
+            <option value="advertising">광고 제안</option>
+            <option value="other">기타</option>
+          </select>
+        </label>
+
+        <label>
+          <span>문의 내용</span>
+          <textarea name="message" rows="7" placeholder="제휴 목적, 기대 효과, 일정 등을 적어주세요." required></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="새 제휴 문의가 접수되었습니다">
+
+        <div class="form-actions">
+          <button type="submit" id="submit-button">문의 보내기</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script defer src="/main.js"></script>
 </body>
 </html>
